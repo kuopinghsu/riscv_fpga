@@ -299,8 +299,9 @@ wire ulite_tx_wr_req_w = ulite_tx_wr_q;
 //-----------------------------------------------------------------
 
 // Configuration
+localparam   CORE_CLK  = 50; // 50MHz
 localparam   STOP_BITS = 1'b0; // 0 = 1, 1 = 2
-localparam   BIT_DIV   = 32'd24;
+localparam   BIT_DIV   = CORE_CLK - 1;
 
 localparam   START_BIT = 4'd0;
 localparam   STOP_BIT0 = 4'd9;
